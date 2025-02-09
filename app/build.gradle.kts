@@ -1,8 +1,13 @@
-plugins {
-    id("java")
-    checkstyle
-}
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
 
+plugins {
+    jacoco
+    id("checkstyle")
+    id("io.freefair.lombok") version "8.6"
+    application
+}
+application { mainClass.set("hexlet.code.App") }
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
 
@@ -11,7 +16,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    implementation("org.apache.commons:commons-lang3:3.14.0")
+    implementation("org.apache.commons:commons-collections4:4.4")
+    testImplementation(platform("org.junit:junit-bom:5.10.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
