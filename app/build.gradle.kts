@@ -20,6 +20,7 @@ dependencies {
     implementation("org.apache.commons:commons-collections4:4.4")
     testImplementation(platform("org.junit:junit-bom:5.10.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation("info.picocli:picocli:4.7.5")
 }
 
 tasks.test {
